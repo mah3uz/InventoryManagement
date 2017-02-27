@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OutboundFormRequest;
 use Illuminate\Http\Request;
+use App\Buyer;
+use App\Products;
+use App\Outbound;
 
 class OutboundController extends Controller
 {
@@ -23,7 +27,9 @@ class OutboundController extends Controller
      */
     public function create()
     {
-        //
+        $products = Products::all();
+        $buyers = Buyer::all();
+        return view('outbound.entry', compact('products', 'buyers'));
     }
 
     /**
@@ -32,9 +38,16 @@ class OutboundController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OutboundFormRequest $request)
     {
-        //
+        $outbound = new Outbound(array(
+            'product_id' => $request->get('product_id'),
+            'buyer_id' => $request->get('buyer_id'),
+            'quantity' => $request->get('quantity'),
+        ));
+
+        $outbound->save();
+        return redirect('/add_outbound')->with('status', 'Your Shipment has been added.');
     }
 
     /**

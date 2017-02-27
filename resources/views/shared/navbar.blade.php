@@ -8,6 +8,7 @@
             <div class="menu pull-right">
                 <a class="btn btn-primary" href="{{ url('/') }}">Home</a>
                 <a class="btn btn-primary" href="{{ url('/add_inbound') }}">Inbound</a>
+                <a class="btn btn-primary" href="{{ url('/add_outbound') }}">Outbound</a>
                 <a class="btn btn-primary" href="{{ url('/products') }}">Products</a>
                 <a class="btn btn-primary" href="{{ url('/buyers') }}">Buyers</a>
                 <a class="btn btn-primary" href="{{ url('/suppliers') }}">Suppliers</a>

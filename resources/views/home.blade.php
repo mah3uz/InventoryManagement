@@ -5,13 +5,17 @@
 
     <div class="content">
 
+        <?php
+            $stock = $stockItem;
+        ?>
 
         <div class="entry-table">
             <table class="responstable">
 
                 <tr>
+                    <th>Date</th>
                     <th>Item Name</th>
-                    <th data-th="Driver details">JAN</th>
+                    <th>JAN</th>
                     <th>Previous</th>
                     <th>Arrival of goods</th>
                     <th>Shipment</th>
@@ -19,6 +23,7 @@
                 </tr>
 
                 <tr>
+                    <td>Date</td>
                     <td>Motherboard</td>
                     <td>Computer</td>
                     <td>10</td>

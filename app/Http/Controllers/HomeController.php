@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Inbound;
+use App\Outbound;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,8 @@ class HomeController extends Controller
     public function home()
     {
         $inbounds = Inbound::all();
-        return view('home', compact('inbounds'));
+        $outbounds = Outbound::all();
+        return view('home', compact('inbounds', 'outbounds'));
     }
 
 }

@@ -38,7 +38,7 @@ class BuyersController extends Controller
     public function store(BuyersFormRequest $request)
     {
         $buyer = new Buyer(array(
-           'name' => $request->get('name'),
+            'name' => $request->get('name'),
             'address' => $request->get('address'),
         ));
 

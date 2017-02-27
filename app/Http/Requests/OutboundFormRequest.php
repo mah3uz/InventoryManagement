@@ -13,7 +13,7 @@ class OutboundFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class OutboundFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'product_id' => 'required',
+            'buyer_id' => 'required',
+            'quantity' => 'required',
         ];
     }
 }

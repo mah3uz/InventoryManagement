@@ -20,7 +20,7 @@
 
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                     <fieldset>
-                        <legend>Entry a new product</legend>
+                        <legend>Entry a new Shipment</legend>
                         <div class="form-group">
                             <label for="p_name" class="col-lg-2 control-label">Product</label>
                             <div class="col-lg-10">
@@ -33,11 +33,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="p_desc" class="col-lg-2 control-label">Supplier</label>
+                            <label for="p_desc" class="col-lg-2 control-label">Buyer</label>
                             <div class="col-lg-10">
-                                <select class="form-control" rows="3" id="supplier_id" name="supplier_id">
-                                    @foreach($suppliers as $supplier)
-                                        <option value="<?php echo $supplier->id; ?>"><?php echo $supplier->name; ?></option>
+                                <select class="form-control" rows="3" id="buyer_id" name="buyer_id">
+                                    @foreach($buyers as $buyer)
+                                        <option value="<?php echo $buyer->id; ?>"><?php echo $buyer->name; ?></option>
                                     @endforeach
                                 </select>
                             </div>

@@ -23,8 +23,10 @@ Route::get('/buyers', 'BuyersController@index');
 Route::get('/add_products', 'ProductsController@create');
 Route::get('/add_suppliers', 'SuppliersController@create');
 Route::get('/add_buyers', 'BuyersController@create');
+Route::get('/add_inbound', 'InboundController@create');
 
 //Post Method
 Route::post('/add_products', 'ProductsController@store');
 Route::post('/add_suppliers', 'SuppliersController@store');
 Route::post('/add_buyers', 'BuyersController@store');
+Route::post('/add_inbound', 'InboundController@store');

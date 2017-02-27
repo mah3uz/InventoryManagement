@@ -22,23 +22,31 @@
                     <fieldset>
                         <legend>Entry a new product</legend>
                         <div class="form-group">
-                            <label for="p_name" class="col-lg-2 control-label">Name</label>
+                            <label for="p_name" class="col-lg-2 control-label">Product</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="p_name" name="p_name" placeholder="Name">
+                                <select class="form-control" id="product_id" name="product_id" placeholder="Name">
+                                    @foreach($products as $product)
+                                        <option value="<?php echo $product->id; ?>"><?php echo $product->p_name; ?></option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="p_desc" class="col-lg-2 control-label">JAN</label>
+                            <label for="p_desc" class="col-lg-2 control-label">Supplier</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" rows="3" id="jan" name="jan">
+                                <select class="form-control" rows="3" id="supplier_id" name="supplier_id">
+                                    @foreach($suppliers as $supplier)
+                                        <option value="<?php echo $supplier->id; ?>"><?php echo $supplier->name; ?></option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="price" class="col-lg-2 control-label">Unit Price</label>
+                            <label for="price" class="col-lg-2 control-label">Quantity</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="price" name="price" placeholder="Price">
+                                <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity">
                             </div>
                         </div>
 

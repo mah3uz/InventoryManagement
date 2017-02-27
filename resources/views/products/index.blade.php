@@ -12,8 +12,6 @@
         <div class="col-md-8">
             <div class="menu pull-right">
                 <a class="btn btn-success" href="{{ url('/add_products') }}">Add Product</a>
-                <a class="btn btn-success" href="{{ url('/add_buyers') }}">Add Buyer</a>
-                <a class="btn btn-success" href="{{ url('/add_suppliers') }}">Add Supplier</a>
             </div>
         </div>
 

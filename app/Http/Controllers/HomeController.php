@@ -13,7 +13,29 @@ class HomeController extends Controller
     {
         $inbounds = Inbound::all();
         $outbounds = Outbound::all();
-        return view('home', compact('inbounds', 'outbounds'));
+
+        $total_records = array();
+
+        while ($inbounds->isNotEmpty() && $outbounds->isNotEmpty()) {
+            $inbound = $inbounds->first();
+            $outbound = $outbounds->first();
+
+            if ($inbound->created_at < $outbound->created_at) {
+                $total_records[] = $inbounds->shift();
+            } else {
+                $total_records[] = $outbounds->shift();
+            }
+        }
+
+        $inbounds->each(function($item) {
+            $total_records[] = $item;
+        });
+
+        $outbounds->each(function($item) {
+            $total_records[] = $item;
+        });
+
+        return view('home', compact('total_records'));
     }
 
 }
